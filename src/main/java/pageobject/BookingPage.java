@@ -17,41 +17,28 @@ public class BookingPage {
 
 
 	public WebDriver driver;
-	//div[@class='form-fields']/div[1]//div[@class='autocompleter-scroll-cntr']/div[1]
-	 ////div[@class='form-fields']/div[1]//div[@class='autocompleter-scroll-cntr']
-	By roundtrip = By.xpath("//span[2]/span[contains(text(),'Round Trip')]");
+
+	By rountTrip = By.xpath("//span[2]/span[contains(text(),'Round Trip')]");
 	
 	By from = By.xpath("//div[@class='form-fields']/div[1]//input");
 	
-	By fromautocomplete = By.xpath("//div[@class='form-fields']/div[1]//div[@class='autocompleter-scroll-cntr']/div[1]");
+	By fromAutocomplete = By.xpath("//div[@class='form-fields']/div[1]//div[@class='autocompleter-scroll-cntr']/div[1]");
 	
-	By clearfromfield = By.xpath("//div[@class='form-fields']/div[1]/div/div[2]");
+	By clearFromField = By.xpath("//div[@class='form-fields']/div[1]/div/div[2]");
 	
-	By tofield = By.xpath("//div[@class='form-fields']/div[3]//input");
+	By toField = By.xpath("//div[@class='form-fields']/div[3]//input");
    
-	By toautocomplete = By.xpath("//div[@class='form-fields']/div[3]//div[@class='autocompleter-scroll-cntr']/div[1]");
+	By toAutocomplete = By.xpath("//div[@class='form-fields']/div[3]//div[@class='autocompleter-scroll-cntr']/div[1]");
 	
-	By cleartofield = By.xpath("//div[@class='form-fields']/div[3]/div/div[2]");
+	By clearToField = By.xpath("//div[@class='form-fields']/div[3]/div/div[2]");
 	
-	By departurefield = By.xpath("//div[@class='form-fields']/div[4]//div[1]/input");
+	By departureField = By.xpath("//div[@class='form-fields']/div[4]//div[1]/input");
 	
-	By departuredate = By.xpath("//div[2]/div[2]/div[1]/table/tbody/tr[2]/td[1]");
 	
-	By departuremonth = By.xpath("//div[contains(@class,'flight-dep-cal')]//div[@class=\"rd-month\"][1]/div[@class=\"rd-month-label\"]");
+	By returnField = By.xpath("//div[@class='form-fields']/div[4]//div[2]/input");
 	
-	By departureBack = By.xpath("//div[contains(@class,'flight-dep-cal')]//div[@class=\"rd-month\"][1]/button[contains(@class,'rd-back')]");
+	By searchBtn = By.xpath("//div[@class=\"form-fields\"]/div[6]/button");
 	
-	By departureNext = By.xpath("//div[contains(@class,'flight-dep-cal')]//div[@class=\"rd-month\"][2]/button[contains(@class,'rd-next')]");
-	
-	By returnfield = By.xpath("//div[@class='form-fields']/div[4]//div[2]/input");
-	
-	By returnmonth = By.xpath("//div[3]/div[2]/div[2]/div[@class='rd-month-label']");
-	
-	By returndate = By.xpath("//div[3]/div[2]/div[2]/table/tbody/tr[2]/td[2]");
-	
-	By searchbtn = By.xpath("//div[@class=\"form-fields\"]/div[6]/button");
-	
-	By travellersinfo = By.xpath("//div[@class='form-fields']/div[5]//input");
 	
 	CalendarComponent depCal;// = new CalendarObject(departureCal,driver);
 	
@@ -61,62 +48,40 @@ public class BookingPage {
 	
 	TravelerClassComponent travelers; 
 	
-	public WebElement getroundtrip() {
-		return driver.findElement(roundtrip);
+	public WebElement getRoundTrip() {
+		return driver.findElement(rountTrip);
 		}
 	
 	public WebElement getFrom() {
 	return driver.findElement(from);
 	}
 	
-	public WebElement getclearfromfield() {
-		return driver.findElement(clearfromfield);
+	public WebElement getClearFromField() {
+		return driver.findElement(clearFromField);
 		}
 
-	public WebElement getFromautocomplete() {
-		return driver.findElement(fromautocomplete);
+	public WebElement getFromAutocomplete() {
+		return driver.findElement(fromAutocomplete);
 	}
    
-	public WebElement gettofield() {
-		return driver.findElement(tofield);
+	public WebElement getToField() {
+		return driver.findElement(toField);
 		}
 		
-	public WebElement getcleartofield() {
-		return driver.findElement(cleartofield);
+	public WebElement getClearToField() {
+		return driver.findElement(clearToField);
 		}
 
-	public WebElement gettoautocomplete() {
-		return driver.findElement(toautocomplete);
+	public WebElement getToAutocomplete() {
+		return driver.findElement(toAutocomplete);
 	}
 	
-	public WebElement getdeparturefield() {
-		return driver.findElement(departurefield);
+	public WebElement getDepartureField() {
+		return driver.findElement(departureField);
 		}
 
-	public WebElement getdeparturemonth() {
-		return driver.findElement(departuremonth);
-		}
-
-	public WebElement getdeparturedate() {
-		return driver.findElement(departuredate);
-		}
-	
-	public WebElement getreturnfield() {
-		return driver.findElement(returnfield);
-		}
-
-	public WebElement getreturnmonth() {
-		return driver.findElement(returnmonth);
-		}
-
-	public WebElement getreturndate() {
-		return driver.findElement(returndate);
-		}
-	public WebElement getDepartureNext() {
-		return driver.findElement(departureNext);
-		}
-	public WebElement getDepartureBack() {
-		return driver.findElement(departureBack);
+	public WebElement getReturnField() {
+		return driver.findElement(returnField);
 		}
 
 	public CalendarComponent getDepCal() {
@@ -140,7 +105,7 @@ public class BookingPage {
 	}
 	
 	public void search() {
-		driver.findElement(searchbtn).click();
+		driver.findElement(searchBtn).click();
 	}
 
 }

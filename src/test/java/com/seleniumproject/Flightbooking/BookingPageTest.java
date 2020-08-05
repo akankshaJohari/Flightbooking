@@ -26,23 +26,23 @@ public class BookingPageTest extends BaseClass{
 	BookingPage bk= new BookingPage(driver);
 	Thread.sleep(5000);
 	//bk.getclearfromfield().click();
-	bk.getroundtrip().click();
+	bk.getRoundTrip().click();
 	Date depDate = new Date(2020,8,15);
 	
 		String text = bk.getFrom().getText();
 		if(text!=null && text.length()<=0) {
-			bk.getclearfromfield().click();
+			bk.getClearFromField().click();
 			
 		}
 		bk.getFrom().sendKeys("Indore");
 		Thread.sleep(5000);
-		bk.getFromautocomplete().click();
+		bk.getFromAutocomplete().click();
 	    
-		bk.gettofield().sendKeys("Kolkata");
+		bk.getToField().sendKeys("Kolkata");
 		Thread.sleep(5000);
-		bk.gettoautocomplete().click();
+		bk.getToAutocomplete().click();
 	    
-		bk.getdeparturefield().click();
+		bk.getDepartureField().click();
 		bk.getDepCal().selectDate(depDate);
 		System.out.println(bk.getRetCal().getCurrentMonth());
 		bk.getRetCal().selectDate(new Date(2020,9,14));
