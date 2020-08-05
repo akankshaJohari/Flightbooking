@@ -4,15 +4,15 @@ import org.openqa.selenium.By;
 import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.WebElement;
 
-public class BookingPage1 {
+public class BookingPage {
 
 	
-	public BookingPage1(WebDriver driver) {
+	public BookingPage(WebDriver driver) {
 		
 		this.driver = driver;
-		this.depCal = new CalendarObject("//div[contains(@class,'flight-dep-cal')]",driver);
+		this.depCal = new CalendarComponent("//div[contains(@class,'flight-dep-cal')]",driver);
 		
-		this.retCal = new CalendarObject("//div[contains(@class,'flight-ret-cal')]",driver);
+		this.retCal = new CalendarComponent("//div[contains(@class,'flight-ret-cal')]",driver);
 	}
 
 
@@ -53,13 +53,13 @@ public class BookingPage1 {
 	
 	By travellersinfo = By.xpath("//div[@class='form-fields']/div[5]//input");
 	
-	CalendarObject depCal;// = new CalendarObject(departureCal,driver);
+	CalendarComponent depCal;// = new CalendarObject(departureCal,driver);
 	
-	CalendarObject retCal; //  = new CalendarObject(returnCal,driver);
+	CalendarComponent retCal; //  = new CalendarObject(returnCal,driver);
 	
 	String passengerBaseXPath="//div[contains(@class,'passenger')]";
 	
-	TravelerClassObject travelers; 
+	TravelerClassComponent travelers; 
 	
 	public WebElement getroundtrip() {
 		return driver.findElement(roundtrip);
@@ -119,24 +119,24 @@ public class BookingPage1 {
 		return driver.findElement(departureBack);
 		}
 
-	public CalendarObject getDepCal() {
+	public CalendarComponent getDepCal() {
 		return depCal;
 	}
 
-	public void setDepCal(CalendarObject depCal) {
+	public void setDepCal(CalendarComponent depCal) {
 		this.depCal = depCal;
 	}
 
-	public CalendarObject getRetCal() {
+	public CalendarComponent getRetCal() {
 		return retCal;
 	}
 
-	public void setRetCal(CalendarObject retCal) {
+	public void setRetCal(CalendarComponent retCal) {
 		this.retCal = retCal;
 	}
 
-	public TravelerClassObject  getTravelers() {
-		return new TravelerClassObject(passengerBaseXPath, driver);
+	public TravelerClassComponent  getTravelers() {
+		return new TravelerClassComponent(passengerBaseXPath, driver);
 	}
 	
 	public void search() {

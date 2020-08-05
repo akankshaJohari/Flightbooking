@@ -3,13 +3,13 @@ package pageobject;
 import org.openqa.selenium.By;
 import org.openqa.selenium.WebDriver;
 
-public class NumberCounterObject {
+public class NumberCounterComponent {
 	
 	String baseXPath;
 	WebDriver driver;
 	
 	
-	public NumberCounterObject(String baseXPath, WebDriver driver) {
+	public NumberCounterComponent(String baseXPath, WebDriver driver) {
 		super();
 		this.baseXPath = baseXPath;
 		this.driver = driver;

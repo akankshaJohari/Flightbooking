@@ -3,7 +3,7 @@ package pageobject;
 import org.openqa.selenium.By;
 import org.openqa.selenium.WebDriver;
 
-public class ResultPageObject {
+public class ResultPageComponent {
 	
 	WebDriver driver;
 	String baseXPath ;//"//div[@class=\"result-wrpr\"]/div[1]/div[1]/div[contains(@class ,\"c-flight-listing-split-row\")]";
@@ -13,7 +13,7 @@ public class ResultPageObject {
 	public SearchItemComponents fromResultComponents;
 	
 	
-	public ResultPageObject(WebDriver driver, String baseXPath) {
+	public ResultPageComponent(WebDriver driver, String baseXPath) {
 		this.driver = driver;
 		this.baseXPath = baseXPath;
 		this.toResultXPath = baseXPath+"/div[1]//div[contains(@class ,\"c-flight-listing-split-row\")]";

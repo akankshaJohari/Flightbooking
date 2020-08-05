@@ -8,7 +8,7 @@ import org.openqa.selenium.By;
 import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.WebElement;
 
-public class CalendarObject {
+public class CalendarComponent {
 	
 	By cal ;
 	By month;
@@ -18,7 +18,7 @@ public class CalendarObject {
 	private String previousButtonXpath;
 	private String monthLabelXpath;
 	
-	public CalendarObject(String baseXpath, WebDriver driver) {
+	public CalendarComponent(String baseXpath, WebDriver driver) {
 		this.baseXPath = baseXpath;
 		
 		this.cal = By.xpath(baseXpath);

@@ -10,9 +10,9 @@ import org.apache.poi.util.StringUtil;
 import org.openqa.selenium.Keys;
 import org.testng.annotations.Test;
 
-import pageobject.BookingPage1;
-import pageobject.ResultPageObject;
-import pageobject.TravelerClassObject;
+import pageobject.BookingPage;
+import pageobject.ResultPageComponent;
+import pageobject.TravelerClassComponent;
 import resources.BaseClass;
 
 
@@ -23,7 +23,7 @@ public class BookingPageTest extends BaseClass{
 	public void basePageNavigation() throws IOException, InterruptedException, ParseException {
 	driver = initialiazeDriver();
 	driver.get("https://www.ixigo.com/");
-	BookingPage1 bk= new BookingPage1(driver);
+	BookingPage bk= new BookingPage(driver);
 	Thread.sleep(5000);
 	//bk.getclearfromfield().click();
 	bk.getroundtrip().click();
@@ -46,7 +46,7 @@ public class BookingPageTest extends BaseClass{
 		bk.getDepCal().selectDate(depDate);
 		System.out.println(bk.getRetCal().getCurrentMonth());
 		bk.getRetCal().selectDate(new Date(2020,9,14));
-		TravelerClassObject travelerClass =bk.getTravelers(); 
+		TravelerClassComponent travelerClass =bk.getTravelers(); 
 		travelerClass.getAdult().setNumber(2);
 		travelerClass.getChild().setNumber(2);
 		travelerClass.getInfant().setNumber(2);
@@ -54,7 +54,7 @@ public class BookingPageTest extends BaseClass{
 		
 		bk.search();
 		Thread.sleep(15000);
-		ResultPageObject rp = new ResultPageObject(driver, "//div[@class=\"result-wrpr\"]");
+		ResultPageComponent rp = new ResultPageComponent(driver, "//div[@class=\"result-wrpr\"]");
 		System.out.println("Flight towards ");
 		rp.toResultComponents.getFlightsBelow(6000);
 		
